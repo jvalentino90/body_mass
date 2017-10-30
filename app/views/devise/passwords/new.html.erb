@@ -1,0 +1,17 @@
+<div class="centered">
+  <h2 class="centered-text">Forgot your password?</h2>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= devise_error_messages! %>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label table-display">
+      <%= text_field_tag :email, nil, class:'mdl-textfield__input', type:'email', id:'email', autofocus: true %>
+      <%= label_tag :email, "Email", class: "mdl-textfield__label", for:"email" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Reset password", class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored margined" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>

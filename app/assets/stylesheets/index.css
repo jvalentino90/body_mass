@@ -1,0 +1,28 @@
+.demo-list-icon {
+  width: 300px;
+}
+.centered-text{
+  text-align: center;
+}
+.centered {
+    margin: 0 auto;
+    text-align: left;
+    width: 800px;
+}
+
+.check{
+  width:200px !important;
+  text-align: left;
+  margin-right: 24em !important;
+}
+
+.table-display{
+  display: block !important;
+  width: 100em !important;
+}
+
+.margined{
+  margin-bottom: 20px !important;
+}
+
+

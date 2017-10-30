@@ -1,0 +1,26 @@
+<div class="centered">
+  <h2 class="centered-text">Welcome!</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label table-display">
+      <%= f.text_field :email, class:'mdl-textfield__input', type:'email', autofocus:true %>
+      <%= f.label :email, "Email", class: "mdl-textfield__label", for:"email" %>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label table-display">
+      <%= f.text_field :password, class:'mdl-textfield__input', type:'password', autocomplete: "off" %>
+      <%= f.label :password, "Password (#{@minimum_password_length} characters minimum)", class: "mdl-textfield__label", for:"password" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Log in", class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored margined"%>
+    </div>
+    <% if devise_mapping.rememberable? -%>
+      <div>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect check" for="checkbox-1">
+          <%= f.check_box :remember_me, id: "checkbox-1", class: "mdl-checkbox__input", checked: true%>
+          <span class="mdl-checkbox__label">Remember me</span>
+        </label>
+      </div>
+    <% end %>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>

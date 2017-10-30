@@ -1,0 +1,15 @@
+<h2 class="centered-text">Body Mass Index</h2>
+  <%= form_tag('body_mass/calculate_bmi', method: 'get', id:'mass_form', remote: true) do %>
+    <div class="centered">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= text_field_tag :height, nil, class:'mdl-textfield__input errors', type:'text', id:'height' %>
+      <%= label_tag :height, "Height (in cm)", class: "mdl-textfield__label", for:"Height" %>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <%= text_field_tag :weight, nil, class:'mdl-textfield__input errors', type:'text', id:'weight' %>
+      <%= label_tag :weight, "Weight (in kg)", class: "mdl-textfield__label", for:"weight" %>
+    </div>
+    <%= submit_tag "Calculate BMI", class:"mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" %>
+  </div>
+<% end %>
+<div id="results"></div>
